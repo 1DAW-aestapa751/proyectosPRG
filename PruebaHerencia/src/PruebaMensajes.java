@@ -3,11 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PruebaMensajes {
     
-    static Mensaje mensajes [];
+    static Mensaje mensajes [] = new Mensaje[0];
 
     public static void main(String[] args) {
         
@@ -28,14 +29,35 @@ public class PruebaMensajes {
             System.out.println("¿Desea enviar un nuevo mensaje? S/N");
         }
         
-        //enviarMensajes();
+        enviarMensajes();
         
-        //mostrarMensajesEnviados();
+        mostrarEnviados();
 
     }
     
+    public static void anadirMensaje(Mensaje m){
+        mensajes = Arrays.copyOf(mensajes, mensajes.length+1);
+        mensajes[mensajes.length-1] = m;
+    }
 
-    
+    public static void enviarMensajes(){
+        for (int i = 0; i < mensajes.length; i++){
+            if (mensajes[i] instanceof Whatsapp || mensajes[i] instanceof Email){
+                if (mensajes[i].validarDestinatario()) {
+                    ((Enviable) mensajes[i]).enviar();
+                }
+            }
+        }
+    }
+
+    public static void mostrarEnviados(){
+        for (int i = 0; i < mensajes.length; i++){
+            if (mensajes[i].enviado){
+                System.out.println(mensajes[i].toString());
+            }
+        }
+    }
+
     private static void crearMail() {
         Scanner sc = new Scanner (System.in);
         System.out.println("Introduce el email del destinatario");
@@ -44,7 +66,7 @@ public class PruebaMensajes {
         String asunto = sc.next();
         System.out.println("Introduce el contenido del email");
         String contenido = sc.next();
-        //anadirMensaje(new Email(destinatario,asunto,contenido));
+        anadirMensaje(new Email(destinatario,asunto,contenido));
     }
 
     private static void crearWhatsApp() {
@@ -53,13 +75,13 @@ public class PruebaMensajes {
         String destinatario = sc.next();
         System.out.println("Introduce el contenido del whatsApp");
         String contenido = sc.next();
-        //anadirMensaje(new WhatsApp(destinatario,contenido));
+        anadirMensaje(new Whatsapp(destinatario,contenido));
     }
 
     private static void crearPosIt() {
        Scanner sc = new Scanner (System.in);
         System.out.println("Qué quieres poner en el posIt");
         String contenido = sc.next();
-        //anadirMensaje(new PosIt(contenido));
+        anadirMensaje(new PostIt(contenido));
     }
 }
