@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ED_T2_Figuras:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ED_T2_Figuras_jar</output-path>
+    <root id="archive" name="ED_T2_Figuras.jar">
+      <element id="module-output" name="ED_T2_Figuras" />
+    </root>
+  </artifact>
+</component>

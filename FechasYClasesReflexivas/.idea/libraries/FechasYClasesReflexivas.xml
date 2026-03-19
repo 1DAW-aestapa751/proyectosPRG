@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="FechasYClasesReflexivas">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/FechasYClasesReflexivas.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LIB_VALIDACIONES:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LIB_VALIDACIONES_jar</output-path>
+    <root id="archive" name="LIB_VALIDACIONES.jar">
+      <element id="module-output" name="LIB_VALIDACIONES" />
+    </root>
+  </artifact>
+</component>

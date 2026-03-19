@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ED_UD3_AEA:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ED_UD3_AEA_jar</output-path>
+    <root id="archive" name="ED_UD3_AEA.jar">
+      <element id="module-output" name="ED_UD3_AEA" />
+    </root>
+  </artifact>
+</component>
